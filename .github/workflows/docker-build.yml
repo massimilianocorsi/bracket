@@ -24,6 +24,10 @@ jobs:
       packages: read
 
     steps:
+      
+      - name: Print registry env
+        run: echo "Registry: ${{ env.REGISTRY }}"
+    
       - name: Checkout repository
         uses: actions/checkout@v5
 
