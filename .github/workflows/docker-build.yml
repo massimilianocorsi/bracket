@@ -11,6 +11,11 @@ on:
     branches:
       - 'master'
 
+env:
+  REGISTRY: ${{ secrets.PRIVATE_REGISTRY }} 
+  IMAGE_NAME_FRONTEND: ${{ github.repository }}-frontend
+  IMAGE_NAME_BACKEND: ${{ github.repository }}-backend
+
 jobs:
   build-and-push-image:
     runs-on: ubuntu-24.04
