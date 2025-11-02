@@ -12,7 +12,7 @@ on:
       - 'master'
 
 env:
-  REGISTRY: ${{ secrets.PRIVATE_REGISTRY }} 
+  REGISTRY: "registry.massimilianocorsi.it:32000"
   IMAGE_NAME_FRONTEND: ${{ github.repository }}-frontend
   IMAGE_NAME_BACKEND: ${{ github.repository }}-backend
 
@@ -24,9 +24,6 @@ jobs:
       packages: read
 
     steps:
-      
-      - name: Print registry env
-        run: echo "Registry: ${{ env.REGISTRY }}"
     
       - name: Checkout repository
         uses: actions/checkout@v5
