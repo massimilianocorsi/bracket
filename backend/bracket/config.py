@@ -41,6 +41,14 @@ class Config(BaseSettings):
     pg_dsn: PostgresDsn = "postgresql://user:pass@localhost:5432/db"  # type: ignore[assignment]
     sentry_dsn: str | None = None
 
+    @validator("pg_dsn", pre=True, always=True)
+    def assemble_pg_dsn(cls, v):
+        # Se la variabile d'ambiente PG_DSN è definita, usala
+        env_value = os.getenv("PG_DSN")
+        if env_value:
+            return env_value
+        return v
+
     def is_cors_enabled(self) -> bool:
         return self.cors_origins != "*"
 
