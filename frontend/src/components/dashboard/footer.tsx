@@ -5,7 +5,9 @@ import classes from './footer.module.css';
 
 const links = [
   { link: 'https://docs.bracketapp.nl', label: 'Website' },
-  { link: 'https://github.com/evroon/bracket', label: 'GitHub' },
+  { link: 'https://github.com/evroon/bracket', label: 'Fork GitHub' },
+  { link: 'https://github.com/massimilianocorsi/bracket', label: 'GitHub' },
+  
 ];
 
 export function DashboardFooter() {
